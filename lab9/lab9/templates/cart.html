@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Корзина{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold text-center text-emerald-700 pacifico mb-8">🛒 Ваша корзина</h1>
+
+{% if cart %}
+  <div class="space-y-4 max-w-xl mx-auto">
+    {% for item in cart %}
+      <div class="bg-gray-100 p-3 rounded shadow flex justify-between">
+        <span>{{ item.name }}</span>
+        <span>{{ item.price }} грн</span>
+      </div>
+    {% endfor %}
+  </div>
+ <h2 class="text-xl font-semibold text-center mt-6">Разом: {{ total }} грн</h2>
+<div class="text-center mt-4 space-x-4">
+
+  <!-- 🔴 Очистити кошик -->
+  <form action="{{ url_for('shop.clear_cart') }}" method="post" style="display:inline;">
+    <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
+      Очистити корзину
+    </button>
+  </form>
+
+  <!-- 🟢 Оформити замовлення -->
+  <form action="{{ url_for('shop.checkout') }}" method="post" style="display:inline;">
+    <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded hover:bg-emerald-800">
+      Оформити замовлення
+    </button>
+  </form>
+
+</div>
+{% else %}
+  <p class="text-center text-gray-600">Корзина порожня 😢</p>
+{% endif %}
+{% endblock %}
