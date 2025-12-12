@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Магазин{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold text-center text-emerald-700 pacifico mb-8">Наш магазин</h1>
+
+<!-- Пошук та фільтрація винесені сюди -->
+<form method="GET" action="/shop" class="mb-6 flex gap-2 justify-center">
+  <input type="text" name="q" placeholder="Пошук товарів..."
+         class="border rounded px-3 py-2 w-1/3">
+  <input type="number" name="min_price" placeholder="Від грн"
+         class="border rounded px-3 py-2 w-24">
+  <input type="number" name="max_price" placeholder="До грн"
+         class="border rounded px-3 py-2 w-24">
+  <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded">
+    🔍 Пошук
+  </button>
+</form>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {% for product in products %}
+    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+      <img src="{{ url_for('static', filename=product.image_url) }}"
+        alt="{{ product.name }}"
+        class="w-40 h-40 object-cover mx-auto mb-4 rounded-md">
+      <h3 class="text-xl font-semibold text-emerald-700 pacifico">{{ product.name }}</h3>
+      <p class="text-lg text-gray-700 mb-4">{{ product.price }} грн</p>
+
+      <form method="POST" action="/add_to_cart/{{ product.id }}">
+        <button type="submit" class="bg-emerald-700 text-white px-4 py-2 rounded hover:bg-emerald-800">
+          В корзину
+        </button>
+      </form>
+
+      <a href="{{ url_for('shop.product_detail', product_id=product.id) }}" class="text-sm text-blue-600 underline mt-2 block">Деталі</a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

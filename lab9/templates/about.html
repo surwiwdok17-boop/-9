@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Про нас{% endblock %}
+{% block content %}
+
+<h1 class="text-3xl font-bold mb-8 text-center text-emerald-700 pacifico"> Про нас</h1>
+
+<p class="text-lg text-center text-gray-700 mb-10 max-w-3xl mx-auto">
+  Ми — команда, яка створила цей інтернет-магазин, щоб здати заліки, екзамени і просто кайфонути від процесу. Ми не експерти, але ми старались — і в нас все вийде!
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+  <!-- Дмитро -->
+  <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+    <h3 class="text-xl font-semibold text-emerald-700 pacifico mb-2">Дмитро Дмитрук</h3>
+    <p class="text-sm text-gray-700 mb-2">Backend розробник</p>
+    <p class="text-sm text-gray-600">Писав код сайту, частково сам, частково з допомогою ШІ. Сидів з командою, старався — і результат перед вами.</p>
+  </div>
+
+  <!-- Віталій -->
+  <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+    <h3 class="text-xl font-semibold text-emerald-700 pacifico mb-2">Віталій Харчук</h3>
+    <p class="text-sm text-gray-700 mb-2">Team Leader</p>
+    <p class="text-sm text-gray-600">Керував командою, мотивував, допомагав з бекендом, картинками і кодом. Просто крутий мотіватор </p>
+  </div>
+
+  <!-- Артем -->
+  <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+    <h3 class="text-xl font-semibold text-emerald-700 pacifico mb-2">Артем Шуляк</h3>
+    <p class="text-sm text-gray-700 mb-2">Тестер</p>
+    <p class="text-sm text-gray-600">Тестував сайт, шукав баги, щоб усе працювало якнайкраще.</p>
+  </div>
+
+  <!-- Олександр -->
+  <div class="bg-gray-50 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+    <h3 class="text-xl font-semibold text-emerald-700 pacifico mb-2">Олександр Павлик</h3>
+    <p class="text-sm text-gray-700 mb-2">Frontend розробник</p>
+    <p class="text-sm text-gray-600">Робив фронтенд, намагався зробити сайт красивим і зручним для користувачів. І йому це вдалося!</p>
+  </div>
+
+</div>
+
+<!-- Фото-блок -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+  <img src="https://uestore.in.ua/image/cache/catalog/doublerasp-600x600-900x900.jpg" alt="Фото 1" class="w-full rounded-lg shadow-md">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/VKolNUFT_square_logo.png/250px-VKolNUFT_square_logo.png"alt="Фото 2" class="w-full rounded-lg shadow-md">
+</div>
+
+{% endblock %}
