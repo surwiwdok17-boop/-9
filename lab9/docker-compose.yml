@@ -7,7 +7,7 @@ services:
     ports:
       - "5000:5000"
     env_file:
-      - .env
+      - lab9.env
     volumes:
       - sqlite_data:/app/data
     restart: unless-stopped
@@ -21,3 +21,4 @@ services:
 volumes:
   sqlite_data:
     driver: local
+
